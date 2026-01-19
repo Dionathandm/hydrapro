@@ -1,7 +1,7 @@
 {
-  "name": "HydraFilmes",
-  "short_name": "Hydra",
-  "description": "Aplicativo HydraFilmes – Filmes e séries em um só lugar",
+  "name": "HydraPro",
+  "short_name": "HydraPro",
+  "description": "HydraPro – Central de aplicativos e entretenimento",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

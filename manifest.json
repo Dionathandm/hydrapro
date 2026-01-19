@@ -13,6 +13,16 @@
     },
     {
       "src": "https://i.ibb.co/5x5yZfxx/file-00000000dd5471f59b0d32d584ad0409.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/5x5yZfxx/file-00000000dd5471f59b0d32d584ad0409.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/5x5yZfxx/file-00000000dd5471f59b0d32d584ad0409.png",
       "sizes": "512x512",
       "type": "image/png"
     }

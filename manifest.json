@@ -7,24 +7,16 @@
   "theme_color": "#000000",
   "icons": [
     {
-      "src": "https://i.ibb.co/5x5yZfxx/file-00000000dd5471f59b0d32d584ad0409.png",
+      "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "https://i.ibb.co/5x5yZfxx/file-00000000dd5471f59b0d32d584ad0409.png",
-      "sizes": "256x256",
-      "type": "image/png"
-    },
-    {
-      "src": "https://i.ibb.co/5x5yZfxx/file-00000000dd5471f59b0d32d584ad0409.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "https://i.ibb.co/5x5yZfxx/file-00000000dd5471f59b0d32d584ad0409.png",
+      "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

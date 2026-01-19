@@ -1,0 +1,22 @@
+{
+  "name": "HydraPro",
+  "short_name": "HydraPro",
+  "description": "Landing page oficial dos aplicativos HydraFilmes e HydraMusic",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://i.ibb.co/60KP16PJ/lv-0-20260117003207.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/60KP16PJ/lv-0-20260117003207.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

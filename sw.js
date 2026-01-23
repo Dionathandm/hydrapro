@@ -1,10 +1,13 @@
-const CACHE_NAME = 'hydrapro-v2';
+const CACHE_NAME = 'hydrapro-v3'; // versão atualizada
 const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
   '/lv_0_20260122231858.mp4',
-  'https://i.ibb.co/NgNsR966/file-0000000074d071f59185902cd5d7dd05.png'
+  'https://i.ibb.co/0VBBMfrZ/lv-0-20260119011237.png', // HydraPro transparente (para splash e topo)
+  'https://i.ibb.co/r22ZV0kv/lv-0-20260116051448.png', // HydraFilmes
+  'https://i.ibb.co/60KP16PJ/lv-0-20260117003207.png', // HydraMusic
+  'https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg'
 ];
 
 self.addEventListener('install', event => {

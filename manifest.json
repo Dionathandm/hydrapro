@@ -1,10 +1,11 @@
 {
   "name": "HydraPro",
   "short_name": "HydraPro",
-  "start_url": "/index.html",
+  "start_url": "index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#0f0",
+  "description": "HydraPro - Filmes, músicas e entretenimento em um só lugar!",
   "icons": [
     {
       "src": "https://i.ibb.co/0VBBMfrZ/lv-0-20260119011237.png",

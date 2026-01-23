@@ -8,6 +8,35 @@
 <meta name="theme-color" content="#000000">
 
 <style>
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{
+  background:#000;
+  color:#fff;
+  position:relative;
+  min-height:100vh;
+  overflow-x:hidden;
+  padding-bottom:140px;
+}
+a{text-decoration:none;color:inherit}
+
+/* BLOQUEIOS */
+img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+a{-webkit-touch-callout:none}
+
+/* SPLASH */
+#splash{
+  position:fixed;inset:0;background:#000;
+  display:flex;align-items:center;justify-content:center;z-index:9999;
+}
+#splash img{
+  width:180px;
+  object-fit:cover;
+  border-radius:20px;
+  animation:pulse 1.5s infinite;
+}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+
 /* TOPO */
 .topo{
   display:flex;
@@ -19,21 +48,6 @@
 }
 .topo img{height:42px}
 .topo h1{font-size:24px;font-weight:bold}
-
-/* RESET */
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{
-  background:#000;
-  color:#fff;
-  position:relative;
-  min-height:100vh;
-  overflow-x:hidden;
-}
-a{text-decoration:none;color:inherit}
-
-/* BLOQUEIOS */
-img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
-a{-webkit-touch-callout:none}
 
 /* HERO */
 .hero{
@@ -64,9 +78,7 @@ a{-webkit-touch-callout:none}
   cursor:pointer;
   opacity:0.9;
 }
-.play-btn:hover{
-  opacity:1;
-}
+.play-btn:hover{opacity:1}
 
 /* TEXTO ABAIXO DO VÍDEO */
 .hero-text-container{
@@ -104,6 +116,25 @@ a{-webkit-touch-callout:none}
 }
 .channel-buttons a:hover{
   opacity:0.8;
+}
+
+/* BOT DO TELEGRAM */
+.telegram-bot{
+  text-align:center;
+  margin-top:12px;
+}
+.telegram-bot p{
+  font-weight:bold;
+  color:#0f0;
+  margin-bottom:6px;
+}
+.telegram-bot a{
+  background:#1DB954;
+  color:#000;
+  padding:10px 18px;
+  border-radius:12px;
+  font-weight:bold;
+  display:inline-block;
 }
 
 /* APPS */
@@ -171,30 +202,35 @@ footer{
 }
 footer a{color:#0af}
 
-/* BOTÃO DE INSTALAÇÃO */
-.install-btn{
-  position:fixed;
-  bottom:16px;
-  left:50%;
-  transform:translateX(-50%);
+/* PWA INSTALL BUTTON */
+#installBar{
+  position:fixed;bottom:70px;left:0;right:0;background:#000;padding:10px;text-align:center;z-index:40;display:none;
+}
+#installBar button{
   background:#0f0;
-  color:#000;
   border:none;
   padding:14px 22px;
-  font-size:16px;
-  font-weight:bold;
+  width:95%;
   border-radius:30px;
-  box-shadow:0 0 15px rgba(0,255,0,.4);
-  z-index:9999;
-  display:none;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
 }
+
+/* BLOQUEIO DE IMAGENS */
+img{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
 </style>
 </head>
 
 <body>
 
+<!-- SPLASH -->
+<div id="splash">
+  <img src="https://i.ibb.co/NgNsR966/file-0000000074d071f59185902cd5d7dd05.png" alt="HydraPro Logo">
+</div>
+
 <header class="topo">
-  <img src="https://i.ibb.co/0VBBMfrZ/lv-0-20260119011237.png" alt="Logo HydraPro">
+  <img src="https://i.ibb.co/NgNsR966/file-0000000074d071f59185902cd5d7dd05.png" alt="Logo HydraPro">
   <h1>HydraPro</h1>
 </header>
 
@@ -220,11 +256,16 @@ footer a{color:#0af}
     <a href="https://t.me/hydrapro_news" target="_blank">Canal</a>
     <a href="https://t.me/+acUjLJVKFlYwZDBh" target="_blank">Grupo</a>
   </div>
+
+  <!-- BOT DO TELEGRAM -->
+  <div class="telegram-bot">
+    <p>/commands</p>
+    <a href="https://t.me/HydraPro_oficial_bot" target="_blank">Abrir Bot</a>
+  </div>
 </div>
 
 <!-- APPS -->
 <section class="apps">
-
   <div class="app-card">
     <img src="https://i.ibb.co/r22ZV0kv/lv-0-20260116051448.png" alt="HydraFilmes">
     <div>
@@ -235,7 +276,7 @@ footer a{color:#0af}
   </div>
 
   <div class="app-card music">
-    <img src="https://i.ibb.co/60KP16PJ/lv-0-20260117003207.png" alt="HydraMusic">
+    <img src="https://i.ibb.co/NgNsR966/file-0000000074d071f59185902cd5d7dd05.png" alt="HydraMusic">
     <div>
       <h3>HydraMusic</h3>
       <p>Streaming musical independente.</p>
@@ -255,7 +296,6 @@ footer a{color:#0af}
       <span>↗</span>
     </div>
   </div>
-
 </section>
 
 <footer>
@@ -265,45 +305,48 @@ footer a{color:#0af}
   © 2026 HydraPro – Dionathan Duarte Martins
 </footer>
 
-<button id="btnInstall" class="install-btn">📥 Instalar App</button>
+<!-- INSTALL BAR -->
+<div id="installBar">
+  <button id="btnInstall">📥 Baixar HydraPro</button>
+</div>
 
 <script>
+// SPLASH
+setTimeout(()=>{document.getElementById("splash").style.display="none"},2000);
+
 // BLOQUEIOS
 document.addEventListener('contextmenu', e => e.preventDefault());
 document.querySelectorAll('img').forEach(img => {
   img.addEventListener('touchstart', e => e.preventDefault(), { passive:false });
 });
 
-// INSTALL BUTTON
+// INSTALL PWA
 let deferredPrompt;
 const btnInstall = document.getElementById('btnInstall');
-window.addEventListener('beforeinstallprompt', e => {
+window.addEventListener("beforeinstallprompt", e=>{
   e.preventDefault();
   deferredPrompt = e;
-  btnInstall.style.display = 'block';
+  document.getElementById("installBar").style.display="block";
 });
-btnInstall.addEventListener('click', async () => {
-  if (!deferredPrompt) return;
-  deferredPrompt.prompt();
-  const { outcome } = await deferredPrompt.userChoice;
-  if (outcome === 'accepted') btnInstall.style.display = 'none';
-  deferredPrompt = null;
-});
+btnInstall.onclick = async()=>{
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+    await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    btnInstall.style.display="none";
+  }
+};
 
 // SERVICE WORKER
-if ('serviceWorker' in navigator) {
+if('serviceWorker' in navigator){
   navigator.serviceWorker.register('sw.js');
 }
 
-// FUNÇÃO DE ÁUDIO DO VÍDEO
+// VIDEO PLAY/SOUND
 function toggleVideoAudio(){
   const vid = document.getElementById('welcomeVideo');
-  if(vid.muted){
-    vid.muted = false;
-    vid.play();
-  } else {
-    vid.muted = true;
-  }
+  vid.muted = !vid.muted;
+  if(!vid.muted) vid.play();
 }
 </script>
 

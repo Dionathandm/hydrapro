@@ -32,17 +32,15 @@ a{-webkit-touch-callout:none}
 /* HERO */
 .hero{
   position:relative;
-  height:45vh; /* mais baixo para ver legenda */
+  height:auto; /* altura automática */
   overflow:hidden;
   display:flex;
-  align-items:flex-end;
   justify-content:center;
 }
 .hero video{
   width:100%;
-  height:auto;
-  max-height:100%;
-  object-fit:contain; /* mantém proporção e legenda visível */
+  max-height:60vh; /* vídeo com altura menor */
+  object-fit:contain;
 }
 .hero::after{
   content:'';
@@ -50,30 +48,6 @@ a{-webkit-touch-callout:none}
   inset:0;
   background:rgba(0,0,0,0.1);
   pointer-events:none;
-}
-
-/* CONTAINER DO CONTEÚDO DO HERO */
-.hero-content{
-  position:absolute;
-  bottom:10px;
-  left:20px;
-  z-index:2;
-  width:calc(100% - 40px);
-}
-.hero-content h2{
-  font-size:24px;
-  color:#fff;
-  margin-bottom:6px;
-  text-shadow: 1px 1px 6px #000;
-}
-.hero-content .ad{
-  margin-top:6px;
-  background:rgba(0,0,0,0.6);
-  padding:8px;
-  border-radius:6px;
-  border:1px dashed #0f0;
-  color:#0f0;
-  font-size:14px;
 }
 
 /* BOTÃO DE ÁUDIO */
@@ -93,6 +67,26 @@ a{-webkit-touch-callout:none}
 }
 .play-btn:hover{
   opacity:1;
+}
+
+/* CONTEÚDO ABAIXO DO VÍDEO */
+.hero-text-container{
+  padding:16px 20px;
+  text-align:center;
+}
+.hero-text-container h2{
+  font-size:24px;
+  color:#fff;
+  margin-bottom:6px;
+}
+.hero-text-container .ad{
+  margin-top:6px;
+  background:#111;
+  padding:8px;
+  border-radius:6px;
+  border:1px dashed #0f0;
+  color:#0f0;
+  font-size:14px;
 }
 
 /* APPS */
@@ -193,14 +187,16 @@ footer a{color:#0af}
     <source src="lv_0_20260122231858.mp4" type="video/mp4">
   </video>
   <button class="play-btn" onclick="toggleVideoAudio()">🔊 Som</button>
-  <div class="hero-content">
-    <h2>Obrigado por acessar o HydraPro!</h2>
-    <div class="ad">
-      📢 Divulgue aqui seu produto ou serviço<br>
-      📩 <a href="https://wa.me/5547988397589" target="_blank">Contato para parcerias</a>
-    </div>
-  </div>
 </section>
+
+<!-- CONTEÚDO ABAIXO DO VÍDEO -->
+<div class="hero-text-container">
+  <h2>Obrigado por acessar o HydraPro!</h2>
+  <div class="ad">
+    📢 Divulgue aqui seu produto ou serviço<br>
+    📩 <a href="https://wa.me/5547988397589" target="_blank">Contato para parcerias</a>
+  </div>
+</div>
 
 <section class="apps">
 

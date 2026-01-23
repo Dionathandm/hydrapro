@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <title>HydraPro | Apps & Entretenimento</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#000000">
 
 <style>
 /* TOPO */
@@ -40,47 +38,25 @@ a{-webkit-touch-callout:none}
   width:100%;
   max-height:60vh;
   object-fit:contain;
-  background:#000;
 }
 .play-btn{
-  position:absolute;
-  top:10px;
-  right:10px;
-  z-index:3;
-  background:#0f0;
-  color:#000;
-  border:none;
-  padding:8px 12px;
-  font-weight:bold;
-  border-radius:20px;
-  cursor:pointer;
-  opacity:0.8;
-}
-.play-btn:hover{
-  opacity:1;
-}
-
-/* BOTÃO CENTRAL */
-.center-play-btn{
   position:absolute;
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
-  z-index:4;
-  background:rgba(0,255,0,0.8);
+  z-index:3;
+  background:#0f0;
   color:#000;
   border:none;
-  padding:20px 28px;
-  font-size:20px;
+  padding:16px 24px;
   font-weight:bold;
   border-radius:50%;
   cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  opacity:0.9;
+  font-size:24px;
 }
-.center-play-btn:hover{
-  background:rgba(0,255,0,1);
+.play-btn:hover{
+  opacity:1;
 }
 
 /* CONTEÚDO ABAIXO DO VÍDEO */
@@ -167,46 +143,23 @@ footer{
   color:#ccc
 }
 footer a{color:#0af}
-
-/* BOTÃO DE INSTALAÇÃO */
-.install-btn{
-  position:fixed;
-  bottom:16px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#0f0;
-  color:#000;
-  border:none;
-  padding:14px 22px;
-  font-size:16px;
-  font-weight:bold;
-  border-radius:30px;
-  box-shadow:0 0 15px rgba(0,255,0,.4);
-  z-index:9999;
-  display:none;
-}
 </style>
 </head>
 
 <body>
 
 <header class="topo">
-  <img src="https://i.ibb.co/0VBBMfrZ/lv-0-20260119011237.png">
+  <img src="https://i.ibb.co/0VBBMfrZ/lv-0-20260119011237.png" alt="HydraPro Logo">
   <h1>HydraPro</h1>
 </header>
 
 <!-- HERO COM VÍDEO -->
 <section class="hero">
-  <video id="welcomeVideo" autoplay loop playsinline preload="metadata" muted>
+  <video id="welcomeVideo" loop playsinline preload="metadata" muted>
     <source src="lv_0_20260122231858.mp4" type="video/mp4">
     Seu navegador não suporta vídeos HTML5.
   </video>
-
-  <!-- BOTÃO SOM -->
-  <button class="play-btn" onclick="toggleVideoAudio()">🔊 Som</button>
-
-  <!-- BOTÃO CENTRAL PLAY -->
-  <button id="centerPlay" class="center-play-btn">▶️</button>
+  <button class="play-btn" onclick="toggleVideoAudio()">▶</button>
 </section>
 
 <!-- TEXTO ABAIXO DO VÍDEO -->
@@ -222,7 +175,7 @@ footer a{color:#0af}
 <section class="apps">
 
   <div class="app-card">
-    <img src="https://i.ibb.co/r22ZV0kv/lv-0-20260116051448.png">
+    <img src="https://i.ibb.co/r22ZV0kv/lv-0-20260116051448.png" alt="HydraFilmes">
     <div>
       <h3>HydraFilmes</h3>
       <p>Filmes online em versão beta totalmente funcional.</p>
@@ -231,7 +184,7 @@ footer a{color:#0af}
   </div>
 
   <div class="app-card music">
-    <img src="https://i.ibb.co/60KP16PJ/lv-0-20260117003207.png">
+    <img src="https://i.ibb.co/60KP16PJ/lv-0-20260117003207.png" alt="HydraMusic">
     <div>
       <h3>HydraMusic</h3>
       <p>Streaming musical independente.</p>
@@ -243,7 +196,7 @@ footer a{color:#0af}
   <div class="spotify-card">
     <div class="spotify-box"
       onclick="window.open('https://open.spotify.com/user/31wzj7qo5znn7dk4egwiwxfh3k4u?si=xBARBoxkSMWrGqCxCyMFNw','_blank')">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify Logo">
       <div>
         <strong>Meu Spotify</strong><br>
         <small>Abre fora do HydraMusic</small>
@@ -260,8 +213,6 @@ footer a{color:#0af}
 © 2026 HydraPro – Dionathan Duarte Martins
 </footer>
 
-<button id="btnInstall" class="install-btn">📥 Instalar App</button>
-
 <script>
 // BLOQUEIOS
 document.addEventListener('contextmenu', e => e.preventDefault());
@@ -269,47 +220,17 @@ document.querySelectorAll('img').forEach(img => {
   img.addEventListener('touchstart', e => e.preventDefault(), { passive:false });
 });
 
-// INSTALL BUTTON
-let deferredPrompt;
-const btnInstall = document.getElementById('btnInstall');
-window.addEventListener('beforeinstallprompt', e => {
-  e.preventDefault();
-  deferredPrompt = e;
-  btnInstall.style.display = 'block';
-});
-btnInstall.addEventListener('click', async () => {
-  if (!deferredPrompt) return;
-  deferredPrompt.prompt();
-  const { outcome } = await deferredPrompt.userChoice;
-  if (outcome === 'accepted') btnInstall.style.display = 'none';
-  deferredPrompt = null;
-});
-
-// SERVICE WORKER
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js');
-}
-
 // FUNÇÃO DE ÁUDIO DO VÍDEO
 function toggleVideoAudio(){
   const vid = document.getElementById('welcomeVideo');
-  if(vid.muted){
-    vid.muted = false;
+  if(vid.paused){
     vid.play();
+    vid.muted = false;
   } else {
+    vid.pause();
     vid.muted = true;
   }
 }
-
-// BOTÃO CENTRAL PLAY
-const centerPlay = document.getElementById('centerPlay');
-const video = document.getElementById('welcomeVideo');
-
-centerPlay.addEventListener('click', () => {
-  video.muted = false;
-  video.play();
-  centerPlay.style.display = 'none';
-});
 </script>
 
 </body>

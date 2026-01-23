@@ -1,4 +1,4 @@
-const CACHE_NAME = "hydra-v1";
+const CACHE_NAME = "hydra-v2";
 
 const FILES_TO_CACHE = [
   "./",

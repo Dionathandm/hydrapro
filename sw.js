@@ -1,35 +1,32 @@
-const CACHE_NAME = "hydrapro-cache-v1";
+const CACHE_NAME = 'hydrapro-cache-v1';
 const urlsToCache = [
-  "/",
-  "/index.html",
-  "/manifest.json",
-  "https://i.ibb.co/0VBBMfrZ/lv-0-20260119011237.png",
-  "https://i.ibb.co/r22ZV0kv/lv-0-20260116051448.png",
-  "https://i.ibb.co/60KP16PJ/lv-0-20260117003207.png"
+  './index.html',
+  './lv_0_20260122231858.mp4',
+  './manifest.json'
 ];
 
-// Instala e adiciona ao cache
-self.addEventListener("install", event => {
+// Instalação do SW e cache inicial
+self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-    .then(cache => cache.addAll(urlsToCache))
+      .then(cache => cache.addAll(urlsToCache))
   );
-  self.skipWaiting();
 });
 
-// Ativa o Service Worker
-self.addEventListener("activate", event => {
+// Ativação do SW
+self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.map(key => {
-        if(key !== CACHE_NAME) return caches.delete(key);
-      }))
-    )
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.filter(name => name !== CACHE_NAME)
+                  .map(name => caches.delete(name))
+      );
+    })
   );
 });
 
-// Intercepta requisições e entrega do cache quando offline
-self.addEventListener("fetch", event => {
+// Fetch: tenta buscar no cache antes de ir para a rede
+self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(response => response || fetch(event.request))

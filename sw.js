@@ -1,10 +1,10 @@
-const CACHE_NAME = 'hydrapro-v2'; // mude a versão
+const CACHE_NAME = 'hydrapro-v2';
 const urlsToCache = [
   '/',
   '/index.html',
   '/style.css',
   '/lv_0_20260122231858.mp4',
-  'https://i.ibb.co/NgNsR966/file-0000000074d071f59185902cd5d7dd05.png' // novo logo
+  'https://i.ibb.co/NgNsR966/file-0000000074d071f59185902cd5d7dd05.png'
 ];
 
 self.addEventListener('install', event => {

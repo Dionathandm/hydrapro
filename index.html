@@ -8,10 +8,6 @@
 <meta name="theme-color" content="#000000">
 
 <style>
-/* RESET */
-* {margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
-body {background:#000;color:#fff;}
-
 /* TOPO */
 .topo{
   display:flex;
@@ -21,27 +17,29 @@ body {background:#000;color:#fff;}
   padding:16px;
   background:#000;
 }
-.topo img{height:42px;}
-.topo h1{font-size:24px;font-weight:bold;}
+.topo img{height:42px}
+.topo h1{font-size:24px;font-weight:bold;color:#fff;}
 
-/* TEXTO DE AGRADECIMENTO */
-.hero-text-container{
-  padding:16px 20px;
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#000;color:#fff;}
+a{text-decoration:none;color:inherit;}
+
+/* BLOQUEIOS */
+img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
+a{-webkit-touch-callout:none}
+
+/* HERO (Mensagem de agradecimento) */
+.hero{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  padding:40px 20px;
   text-align:center;
 }
-.hero-text-container h2{
+.hero h2{
   font-size:24px;
   color:#fff;
-  margin-bottom:6px;
-}
-.hero-text-container .ad{
-  margin-top:6px;
-  background:#111;
-  padding:8px;
-  border-radius:6px;
-  border:1px dashed #0f0;
-  color:#0f0;
-  font-size:14px;
 }
 
 /* APPS */
@@ -69,6 +67,9 @@ body {background:#000;color:#fff;}
   padding:10px 14px;
   border-radius:6px;
   font-weight:bold;
+  color:#fff;
+  text-align:center;
+  display:inline-block;
 }
 .app-card.music a{background:#1f6f43;}
 
@@ -132,24 +133,20 @@ footer a{color:#0af;}
 <body>
 
 <header class="topo">
-  <img src="https://i.ibb.co/0VBBMfrZ/lv-0-20260119011237.png">
+  <img src="https://i.ibb.co/0VBBMfrZ/lv-0-20260119011237.png" alt="Logo HydraPro">
   <h1>HydraPro</h1>
 </header>
 
 <!-- MENSAGEM DE AGRADECIMENTO -->
-<div class="hero-text-container">
+<section class="hero">
   <h2>Obrigado por acessar o HydraPro!</h2>
-  <div class="ad">
-    📢 Divulgue aqui seu produto ou serviço<br>
-    📩 <a href="https://wa.me/5547988397589" target="_blank">Contato para parcerias</a>
-  </div>
-</div>
+</section>
 
 <!-- APPS -->
 <section class="apps">
 
   <div class="app-card">
-    <img src="https://i.ibb.co/r22ZV0kv/lv-0-20260116051448.png">
+    <img src="https://i.ibb.co/r22ZV0kv/lv-0-20260116051448.png" alt="HydraFilmes">
     <div>
       <h3>HydraFilmes</h3>
       <p>Filmes online em versão beta totalmente funcional.</p>
@@ -158,7 +155,7 @@ footer a{color:#0af;}
   </div>
 
   <div class="app-card music">
-    <img src="https://i.ibb.co/60KP16PJ/lv-0-20260117003207.png">
+    <img src="https://i.ibb.co/60KP16PJ/lv-0-20260117003207.png" alt="HydraMusic">
     <div>
       <h3>HydraMusic</h3>
       <p>Streaming musical independente.</p>
@@ -170,7 +167,7 @@ footer a{color:#0af;}
   <div class="spotify-card">
     <div class="spotify-box"
       onclick="window.open('https://open.spotify.com/user/31wzj7qo5znn7dk4egwiwxfh3k4u?si=xBARBoxkSMWrGqCxCyMFNw','_blank')">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify">
       <div>
         <strong>Meu Spotify</strong><br>
         <small>Abre fora do HydraMusic</small>

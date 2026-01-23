@@ -1,33 +1,26 @@
 # HydraPro
 
-🔥 **HydraPro** é um aplicativo web que reúne filmes, músicas e entretenimento em um só lugar!  
+HydraPro é um aplicativo web progressivo (PWA) que reúne entretenimento em um só lugar:
 
-Você pode acessar os apps integrados:
-- [HydraFilmes](https://dionathandm.github.io/hydrafilmes/)
-- [HydraMusic](https://dionathandm.github.io/hydramusic/)
-- Spotify externo: [Meu Spotify](https://open.spotify.com/user/31wzj7qo5znn7dk4egwiwxfh3k4u?si=xBARBoxkSMWrGqCxCyMFNw)
+- **HydraFilmes** – Filmes online totalmente funcionais.
+- **HydraMusic** – Streaming musical independente.
+- **Spotify** – Link direto para suas playlists.
 
----
+## Recursos
 
-## Recursos do HydraPro
-- Interface simples e rápida
-- Vídeo de boas-vindas
-- Botão de play/áudio no vídeo
-- Links para apps e Spotify
-- Anunciante de produtos ou serviços
-- Compatível PWA (Progressive Web App)
+- Vídeo de boas-vindas.
+- Botões para Canal e Grupo do Telegram.
+- Botão de instalação PWA.
+- Funciona offline com Service Worker.
 
----
+## Como acessar
 
-## Instalação
-1. Acesse [HydraPro Online](https://dionathandm.github.io/hydrapro/)
-2. No celular, use o botão "📥 Instalar App" para adicionar à tela inicial.
+- Abra o app em qualquer navegador moderno.
+- Clique no botão "Instalar App" para adicionar à tela inicial.
+- Clique nos links para acessar os aplicativos e canais.
 
----
+## Contato
 
-## Política de Privacidade
-Acesse [aqui](privacy.html) para ler nossa política de privacidade completa.
-
----
-
-© 2026 HydraPro – Dionathan Duarte Martins
+- WhatsApp: [Clique aqui](https://wa.me/5547988397589)
+- Telegram Canal: [Clique aqui](https://t.me/hydrapro_news)
+- Telegram Grupo: [Clique aqui](https://t.me/+acUjLJVKFlYwZDBh)

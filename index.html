@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#000000">
 
 <style>
-/* RESET & BODY */
+/* RESET */
 * {margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
 body {background:#000;color:#fff;}
 
@@ -24,42 +24,7 @@ body {background:#000;color:#fff;}
 .topo img{height:42px;}
 .topo h1{font-size:24px;font-weight:bold;}
 
-/* HERO COM VÍDEO CENTRAL */
-.hero{
-  position:relative;
-  width:100%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:60vh;
-  margin-top:16px;
-}
-.hero video{
-  width:100%;
-  max-height:100%;
-  object-fit:contain;
-  background:#000;
-  border-radius:10px;
-}
-.play-overlay{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  background:rgba(0,255,0,0.8);
-  color:#000;
-  padding:20px 30px;
-  border-radius:50%;
-  font-size:24px;
-  font-weight:bold;
-  cursor:pointer;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  z-index:5;
-}
-
-/* CONTEÚDO ABAIXO DO VÍDEO */
+/* TEXTO DE AGRADECIMENTO */
 .hero-text-container{
   padding:16px 20px;
   text-align:center;
@@ -171,16 +136,7 @@ footer a{color:#0af;}
   <h1>HydraPro</h1>
 </header>
 
-<!-- HERO COM VÍDEO -->
-<section class="hero">
-  <video id="welcomeVideo" loop playsinline preload="metadata" muted>
-    <source src="lv_0_20260122231858.mp4" type="video/mp4">
-    Seu navegador não suporta vídeos HTML5.
-  </video>
-  <div class="play-overlay" id="playOverlay">▶️</div>
-</section>
-
-<!-- TEXTO ABAIXO DO VÍDEO -->
+<!-- MENSAGEM DE AGRADECIMENTO -->
 <div class="hero-text-container">
   <h2>Obrigado por acessar o HydraPro!</h2>
   <div class="ad">
@@ -238,21 +194,6 @@ footer a{color:#0af;}
 document.addEventListener('contextmenu', e => e.preventDefault());
 document.querySelectorAll('img').forEach(img => {
   img.addEventListener('touchstart', e => e.preventDefault(), { passive:false });
-});
-
-// PLAY OVERLAY
-const video = document.getElementById('welcomeVideo');
-const overlay = document.getElementById('playOverlay');
-
-overlay.addEventListener('click', () => {
-  if(video.paused){
-    video.play();
-    video.muted = false;
-    overlay.style.display = 'none';
-  } else {
-    video.pause();
-    overlay.style.display = 'flex';
-  }
 });
 
 // INSTALL BUTTON

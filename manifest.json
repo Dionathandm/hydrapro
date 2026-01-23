@@ -1,13 +1,26 @@
 {
   "name": "HydraPro",
   "short_name": "HydraPro",
-  "description": "Apps & Entretenimento – HydraPro",
-  "start_url": "./index.html",
+  "start_url": "/index.html",
   "display": "standalone",
-  "orientation": "portrait",
   "background_color": "#000000",
   "theme_color": "#000000",
   "icons": [
+    {
+      "src": "https://i.ibb.co/NgNsR966/file-0000000074d071f59185902cd5d7dd05.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/NgNsR966/file-0000000074d071f59185902cd5d7dd05.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "https://i.ibb.co/NgNsR966/file-0000000074d071f59185902cd5d7dd05.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
     {
       "src": "https://i.ibb.co/NgNsR966/file-0000000074d071f59185902cd5d7dd05.png",
       "sizes": "192x192",

@@ -24,7 +24,7 @@ a{text-decoration:none;color:inherit}
 img{-webkit-user-drag:none;user-select:none;-webkit-touch-callout:none}
 a{-webkit-touch-callout:none}
 
-/* SPLASH (INTRO) */
+/* SPLASH */
 #splash{
   position:fixed;inset:0;background:#000;
   display:flex;align-items:center;justify-content:center;z-index:9999;
@@ -33,10 +33,7 @@ a{-webkit-touch-callout:none}
   width:180px;
   height:180px;
   object-fit:contain;
-  border-radius:50%;
-  animation:pulse 1.5s infinite;
 }
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
 
 /* TOPO */
 .topo{
@@ -51,7 +48,6 @@ a{-webkit-touch-callout:none}
   height:42px;
   width:42px;
   object-fit:contain;
-  border-radius:50%;
 }
 .topo h1{font-size:24px;font-weight:bold}
 
@@ -162,15 +158,14 @@ a{-webkit-touch-callout:none}
   width:80px;
   height:80px;
   object-fit:contain;
-  border-radius:10px
 }
 .app-card h3{margin-bottom:6px}
 .app-card a{
-  background:red;
   padding:10px 14px;
   border-radius:6px;
   font-weight:bold
 }
+.app-card.hydra-filmes a{background:red}
 .app-card.music a{background:#1f6f43}
 
 /* SPOTIFY */
@@ -224,9 +219,6 @@ footer a{color:#0af}
   font-size:16px;
   cursor:pointer;
 }
-
-/* BLOQUEIO DE IMAGENS */
-img{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
 </style>
 </head>
 
@@ -234,12 +226,10 @@ img{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none;-moz-user-s
 
 <!-- SPLASH -->
 <div id="splash">
-  <!-- imagem antiga da intro -->
-  <img src="https://i.ibb.co/r22ZV0kv/lv-0-20260116051448.png" alt="Splash HydraPro">
+  <img src="https://i.ibb.co/0VBBMfrZ/lv-0-20260119011237.png" alt="Splash HydraPro">
 </div>
 
 <header class="topo">
-  <!-- logo transparente HydraPro -->
   <img src="https://i.ibb.co/0VBBMfrZ/lv-0-20260119011237.png" alt="Logo HydraPro">
   <h1>HydraPro</h1>
 </header>
@@ -253,7 +243,6 @@ img{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none;-moz-user-s
   <button class="play-btn" onclick="toggleVideoAudio()">▶️ Play / Som</button>
 </section>
 
-<!-- TEXTO ABAIXO DO VÍDEO -->
 <div class="hero-text-container">
   <h2>Obrigado por acessar o HydraPro!</h2>
   <div class="ad">
@@ -261,22 +250,19 @@ img{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none;-moz-user-s
     📩 <a href="https://wa.me/5547988397589" target="_blank">Contato para parcerias</a>
   </div>
 
-  <!-- BOTÕES CANAL E GRUPO -->
   <div class="channel-buttons">
     <a href="https://t.me/hydrapro_news" target="_blank">Canal</a>
     <a href="https://t.me/+acUjLJVKFlYwZDBh" target="_blank">Grupo</a>
   </div>
 
-  <!-- BOT DO TELEGRAM -->
   <div class="telegram-bot">
     <p>/commands</p>
     <a href="https://t.me/HydraPro_oficial_bot" target="_blank">Abrir Bot</a>
   </div>
 </div>
 
-<!-- APPS -->
 <section class="apps">
-  <div class="app-card">
+  <div class="app-card hydra-filmes">
     <img src="https://i.ibb.co/r22ZV0kv/lv-0-20260116051448.png" alt="HydraFilmes">
     <div>
       <h3>HydraFilmes</h3>
@@ -294,7 +280,6 @@ img{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none;-moz-user-s
     <a href="https://dionathandm.github.io/hydramusic/" target="_blank">Acessar</a>
   </div>
 
-  <!-- SPOTIFY -->
   <div class="spotify-card">
     <div class="spotify-box"
       onclick="window.open('https://open.spotify.com/user/31wzj7qo5znn7dk4egwiwxfh3k4u?si=xBARBoxkSMWrGqCxCyMFNw','_blank')">
@@ -315,7 +300,6 @@ img{-webkit-user-drag:none;user-drag:none;-webkit-touch-callout:none;-moz-user-s
   © 2026 HydraPro – Dionathan Duarte Martins
 </footer>
 
-<!-- INSTALL BAR -->
 <div id="installBar">
   <button id="btnInstall">📥 Baixar HydraPro</button>
 </div>
@@ -359,6 +343,5 @@ function toggleVideoAudio(){
   if(!vid.muted) vid.play();
 }
 </script>
-
 </body>
 </html>
